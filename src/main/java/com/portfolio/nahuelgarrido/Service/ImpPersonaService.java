@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 public class ImpPersonaService implements IPersonaService{
     @Autowired IPersonaRepository ipersonaRepository;
     
-    
     @Override
     public List<Persona> getPersona() {
         List<Persona> persona = ipersonaRepository.findAll();
