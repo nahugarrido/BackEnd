@@ -4,6 +4,7 @@ import com.portfolio.nahuelgarrido.Entity.Proyecto;
 import com.portfolio.nahuelgarrido.Interface.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProyectoController {
     @Autowired IProyectoService iproyectoService;
     
@@ -58,6 +60,16 @@ public class ProyectoController {
         
         iproyectoService.saveProyecto(proyecto);
         return proyecto;
+    }
+    
+    @GetMapping("/proyectos/traer/proyecto2")
+    public Proyecto findProyecto(){
+        return iproyectoService.findProyecto((int)1);
+    }
+    
+    @GetMapping(path = {"/proyectos/{id}"})
+    public Proyecto findProyecto(@PathVariable("id")int id){         
+        return iproyectoService.findProyecto(id);
     }
 
 }

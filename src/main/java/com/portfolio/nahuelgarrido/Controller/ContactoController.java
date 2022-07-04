@@ -4,6 +4,7 @@ import com.portfolio.nahuelgarrido.Entity.Contacto;
 import com.portfolio.nahuelgarrido.Interface.IContactoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class ContactoController {
     @Autowired IContactoService icontactoService;
     
@@ -53,5 +55,10 @@ public class ContactoController {
         icontactoService.saveContacto(contacto);
         return contacto;
     }
-
+    
+    @GetMapping(path = {"/contactos/{id}"})
+    public Contacto findContacto(@PathVariable("id")int id){         
+        return icontactoService.findContacto(id);     
+    }
+    
 }

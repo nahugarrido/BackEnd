@@ -9,14 +9,15 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-
-@Getter @Setter
+@Getter
+@Setter
 @Entity
 public class Persona {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
-    
+    private Long id;
+
     @NotNull
     @Size(min = 1, max = 30, message = "no cumple con la longitud")
     private String nombre;
@@ -26,12 +27,12 @@ public class Persona {
     /// NO LLEVA NULL PORQUE NO QUEREMOS QUE RELLENEN SIN SENTIDO
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String img;
-    
+
     /// AÑADIMOS CAMPOS
     @NotNull
-    @Size(min = 1, max = 30, message = "no cumple con la longitud")  
+    @Size(min = 1, max = 30, message = "no cumple con la longitud")
     private String puesto;
-    @Size(min = 1, max = 300, message = "no cumple con la longitud") 
+    @Size(min = 1, max = 300, message = "no cumple con la longitud")
     private String descripcion;
-    
+
 }

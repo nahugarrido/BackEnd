@@ -37,5 +37,5 @@ public class Educacion {
     private String fecha_finalizacion;
     
     @Size(min = 0, max = 100, message = "no cumple con la longitud")
-    private String img;
+    private String imagen;
 }

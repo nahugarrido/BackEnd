@@ -4,6 +4,7 @@ import com.portfolio.nahuelgarrido.Entity.Educacion;
 import com.portfolio.nahuelgarrido.Interface.IEducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class EducacionController {
     @Autowired IEducacionService ieducacionService;
     
@@ -45,17 +47,22 @@ public class EducacionController {
             @RequestParam("descripcion") String nuevo_descripcion,
             @RequestParam("fecha_inicio") String nuevo_fecha_inicio,
             @RequestParam("fecha_finalizacion") String nuevo_fecha_finalizacion,
-            @RequestParam("imagen") String nuevo_img){
+            @RequestParam("imagen") String nuevo_imagen){
         
         Educacion educacion = ieducacionService.findEducacion(id);
         educacion.setTitulo(nuevo_titulo);
         educacion.setDescripcion(nuevo_descripcion);
         educacion.setFecha_inicio(nuevo_fecha_inicio);
         educacion.setFecha_finalizacion(nuevo_fecha_finalizacion);
-        educacion.setImg(nuevo_img);
+        educacion.setImagen(nuevo_imagen);
         
         ieducacionService.saveEducacion(educacion);
         return educacion;
+    }
+    
+    @GetMapping(path = {"/educaciones/{id}"})
+    public Educacion findEducacion(@PathVariable("id")int id){         
+        return ieducacionService.findEducacion(id);
     }
 
 }
