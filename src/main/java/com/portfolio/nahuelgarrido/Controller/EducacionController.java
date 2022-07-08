@@ -25,44 +25,31 @@ public class EducacionController {
         return ieducacionService.getEducacion();
     }
     
+    @GetMapping("educaciones/traer/{id}")
+    public Educacion getEducacionId(@PathVariable("id") int id) {
+        return ieducacionService.findEducacion(id);
+    }
+    
     
     @PostMapping("/educaciones/crear")
-    public String createEducacion(@RequestBody Educacion educacion){
+    public void createEducacion(@RequestBody Educacion educacion){
         ieducacionService.saveEducacion(educacion);
-        return "El educacion fue creado correctamente";
+  
     }
     
     
     @DeleteMapping("/educaciones/borrar/{id}")
-    public String deleteEducacion(@PathVariable int id){
+    public void deleteEducacion(@PathVariable int id){
         ieducacionService.deleteEducacion(id);
-        return "El educacion fue eliminado correctamente";
     }
     
     
     // URL: PUERTO/personas/editar/4/nombre & apellido & img --> 4 es el id
     @PutMapping("/educaciones/editar/{id}")
-    public Educacion editEducacion(@PathVariable int id,
-            @RequestParam("titulo") String nuevo_titulo,
-            @RequestParam("descripcion") String nuevo_descripcion,
-            @RequestParam("fecha_inicio") String nuevo_fecha_inicio,
-            @RequestParam("fecha_finalizacion") String nuevo_fecha_finalizacion,
-            @RequestParam("imagen") String nuevo_imagen){
-        
-        Educacion educacion = ieducacionService.findEducacion(id);
-        educacion.setTitulo(nuevo_titulo);
-        educacion.setDescripcion(nuevo_descripcion);
-        educacion.setFecha_inicio(nuevo_fecha_inicio);
-        educacion.setFecha_finalizacion(nuevo_fecha_finalizacion);
-        educacion.setImagen(nuevo_imagen);
-        
+    public Educacion editarEducacion(@PathVariable("id") int id,
+            @RequestBody Educacion educacion) {
+        educacion.setId(id);
         ieducacionService.saveEducacion(educacion);
         return educacion;
     }
-    
-    @GetMapping(path = {"/educaciones/{id}"})
-    public Educacion findEducacion(@PathVariable("id")int id){         
-        return ieducacionService.findEducacion(id);
-    }
-
 }

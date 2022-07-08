@@ -25,40 +25,30 @@ public class ContactoController {
         return icontactoService.getContacto();
     }
     
+    @GetMapping("contactos/traer/{id}")
+    public Contacto getContactoId(@PathVariable("id") int id) {
+        return icontactoService.findContacto(id);
+    }
+    
     
     @PostMapping("/contactos/crear")
-    public String createContacto(@RequestBody Contacto contacto){
+    public void createContacto(@RequestBody Contacto contacto){
         icontactoService.saveContacto(contacto);
-        return "El contacto fue creado correctamente";
     }
     
     
     @DeleteMapping("/contactos/borrar/{id}")
-    public String deleteContacto(@PathVariable int id){
+    public void deleteContacto(@PathVariable int id){
         icontactoService.deleteContacto(id);
-        return "El contacto fue eliminado correctamente";
     }
     
     
-    // URL: PUERTO/personas/editar/4/nombre & apellido & img --> 4 es el id
     @PutMapping("/contactos/editar/{id}")
-    public Contacto editContacto(@PathVariable int id,
-            @RequestParam("mail") String nuevo_mail_contacto,
-            @RequestParam("github") String nuevo_github_url,
-            @RequestParam("linkedin") String nuevo_linkedin_url){
-        
-        Contacto contacto = icontactoService.findContacto(id);
-        contacto.setMail_contacto(nuevo_mail_contacto);
-        contacto.setGithub_url(nuevo_github_url);
-        contacto.setLinkedin_url(nuevo_linkedin_url);
-        
+    public Contacto editarContacto(@PathVariable("id") int id,
+            @RequestBody Contacto contacto) {
+        contacto.setId(id);
         icontactoService.saveContacto(contacto);
         return contacto;
-    }
-    
-    @GetMapping(path = {"/contactos/{id}"})
-    public Contacto findContacto(@PathVariable("id")int id){         
-        return icontactoService.findContacto(id);     
     }
     
 }

@@ -25,51 +25,31 @@ public class ProyectoController {
         return iproyectoService.getProyecto();
     }
     
+    @GetMapping("proyectos/traer/{id}")
+    public Proyecto getProyectoId(@PathVariable("id") int id) {
+        return iproyectoService.findProyecto(id);
+    }
+    
     
     @PostMapping("/proyectos/crear")
-    public String createProyecto(@RequestBody Proyecto proyecto){
+    public void createProyecto(@RequestBody Proyecto proyecto){
         iproyectoService.saveProyecto(proyecto);
-        return "El proyecto fue creado correctamente";
     }
     
     
     @DeleteMapping("/proyectos/borrar/{id}")
-    public String deleteProyecto(@PathVariable int id){
+    public void deleteProyecto(@PathVariable int id){
         iproyectoService.deleteProyecto(id);
-        return "El proyecto fue eliminado correctamente";
     }
     
     
     // URL: PUERTO/personas/editar/4/nombre & apellido & img --> 4 es el id
     @PutMapping("/proyectos/editar/{id}")
-    public Proyecto editProyecto(@PathVariable int id,
-            @RequestParam("nombre") String nuevo_nombre,
-            @RequestParam("fecha") String nuevo_fecha,
-            @RequestParam("descripcion") String nuevo_descripcion,
-            @RequestParam("livecode_url") String nuevo_livecode_url,
-            @RequestParam("sourcecode_url") String nuevo_sourcecode_url,
-            @RequestParam("img") String nuevo_img){
-        
-        Proyecto proyecto = iproyectoService.findProyecto(id);
-        proyecto.setNombre(nuevo_nombre);
-        proyecto.setFecha(nuevo_fecha);
-        proyecto.setDescripcion(nuevo_descripcion);
-        proyecto.setLivecode_url(nuevo_livecode_url);
-        proyecto.setSourcecode_url(nuevo_sourcecode_url);
-        proyecto.setImg(nuevo_img);
-        
+    public Proyecto editarProyecto(@PathVariable("id") int id,
+            @RequestBody Proyecto proyecto) {
+        proyecto.setId(id);
         iproyectoService.saveProyecto(proyecto);
         return proyecto;
-    }
-    
-    @GetMapping("/proyectos/traer/proyecto2")
-    public Proyecto findProyecto(){
-        return iproyectoService.findProyecto((int)1);
-    }
-    
-    @GetMapping(path = {"/proyectos/{id}"})
-    public Proyecto findProyecto(@PathVariable("id")int id){         
-        return iproyectoService.findProyecto(id);
     }
 
 }

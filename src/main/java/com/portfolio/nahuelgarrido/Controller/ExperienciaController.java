@@ -26,8 +26,8 @@ public class ExperienciaController {
         return iexperienciaService.getExperiencia();
     }
     
-    @GetMapping("/traer/{id}")
-    public Experiencia getEducacionId(@PathVariable("id") int id) {
+    @GetMapping("experiencias/traer/{id}")
+    public Experiencia getExperienciaId(@PathVariable("id") int id) {
         return iexperienciaService.findExperiencia(id);
     }
     
