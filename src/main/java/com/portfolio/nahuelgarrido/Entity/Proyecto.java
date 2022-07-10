@@ -36,7 +36,7 @@ public class Proyecto {
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String sourcecode_url;
     
-    @Size(min = 0, max = 100, message = "no cumple con la longitud")
+    @Size(min = 0, max = 160000, message = "no cumple con la longitud")
     private String img;
 
 }
