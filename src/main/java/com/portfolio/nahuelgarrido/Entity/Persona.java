@@ -25,10 +25,8 @@ public class Persona {
     @Size(min = 1, max = 30, message = "no cumple con la longitud")
     private String apellido;
     /// NO LLEVA NULL PORQUE NO QUEREMOS QUE RELLENEN SIN SENTIDO
-    @Size(min = 1, max = 160000, message = "no cumple con la longitud")
     private String img;
     
-    @Size(min = 1, max = 160000, message = "no cumple con la longitud")
     private String img_banner;
 
     /// AÑADIMOS CAMPOS

@@ -35,7 +35,7 @@ public class Educacion {
     @NotNull
     @Size(min = 1, max = 20, message = "no cumple con la longitud")    
     private String fecha_finalizacion;
+
     
-    @Size(min = 0, max = 160000, message = "no cumple con la longitud")
     private String img;
 }
