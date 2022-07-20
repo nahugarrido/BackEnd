@@ -1,18 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
 package com.portfolio.nahuelgarrido.Interface;
 
-import com.portfolio.nahuelgarrido.Entity.Habilidad;
-import java.util.List;
-
+/**
+ *
+ * @author garri
+ */
 public interface IHabilidadService {
-    //Traer una persona
-    public List<Habilidad> getHabilidad();
     
-    //Guardar un objeto de tipo Persona
-    public void saveHabilidad(Habilidad habilidad);
-    
-    //Eliminar un objeto pero lo buscamos por ID
-    public void deleteHabilidad(int id);
-    
-    //Buscar una persona por ID
-    public Habilidad findHabilidad(int id);    
 }
