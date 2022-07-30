@@ -4,6 +4,7 @@ import com.portfolio.nahuelgarrido.Entity.Habilidad;
 import com.portfolio.nahuelgarrido.Interface.IHabilidadService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,25 +26,28 @@ public class HabilidadController {
         return ihabilidadService.getHabilidad();
     }
     
+    
     @GetMapping("habilidades/traer/{id}")
     public Habilidad getHabilidadId(@PathVariable("id") int id) {
         return ihabilidadService.findHabilidad(id);
     }
     
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/habilidades/crear")
     public void createHabilidad(@RequestBody Habilidad habilidad){
         ihabilidadService.saveHabilidad(habilidad);
     }
     
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/habilidades/borrar/{id}")
     public void deleteHabilidad(@PathVariable int id){
         ihabilidadService.deleteHabilidad(id);
     }
     
     
-    // URL: PUERTO/personas/editar/4/nombre & apellido & img --> 4 es el id
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/habilidades/editar/{id}")
     public Habilidad editarHabilidad(@PathVariable("id") int id,
             @RequestBody Habilidad habilidad) {
@@ -51,6 +55,5 @@ public class HabilidadController {
         ihabilidadService.saveHabilidad(habilidad);
         return habilidad;
     }
-     
-
+    
 }

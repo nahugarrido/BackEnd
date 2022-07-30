@@ -19,23 +19,21 @@ public class Persona {
     private Long id;
 
     @NotNull
-    @Size(min = 1, max = 30, message = "no cumple con la longitud")
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nombre;
     @NotNull
-    @Size(min = 1, max = 30, message = "no cumple con la longitud")
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String apellido;
     /// NO LLEVA NULL PORQUE NO QUEREMOS QUE RELLENEN SIN SENTIDO
-    @Size(min = 1, max = 160000, message = "no cumple con la longitud")
     private String img;
     
-    @Size(min = 1, max = 160000, message = "no cumple con la longitud")
     private String img_banner;
 
     /// AÑADIMOS CAMPOS
     @NotNull
-    @Size(min = 1, max = 30, message = "no cumple con la longitud")
+    @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String puesto;
-    @Size(min = 1, max = 300, message = "no cumple con la longitud")
+    @Size(min = 1, max = 500, message = "no cumple con la longitud")
     private String descripcion;
 
 }
