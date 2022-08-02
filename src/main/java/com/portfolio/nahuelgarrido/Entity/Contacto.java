@@ -16,11 +16,9 @@ public class Contacto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    
     @Size(min = 1, max = 100, message = "no cumple con la longitud")    
     private String github_url;
 
-    
     @Size(min = 1, max = 100, message = "no cumple con la longitud")    
     private String linkedin_url;
     
