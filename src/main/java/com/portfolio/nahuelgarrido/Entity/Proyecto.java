@@ -17,23 +17,22 @@ public class Proyecto {
     private int id;
     
     @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")
+    @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String nombre;
 
-    @NotNull
-    @Size(min = 1, max = 50, message = "no cumple con la longitud")    
+    @Size(min = 1, max = 100, message = "no cumple con la longitud")    
     private String fecha;
     
     @NotNull
-    @Size(min = 1, max = 300, message = "no cumple con la longitud")
+    @Size(min = 1, max = 450, message = "no cumple con la longitud")
     private String descripcion;
     
-    @NotNull
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")
+
+    @Size(min = 1, max = 120, message = "no cumple con la longitud")
     private String livecode_url;
     
-    @NotNull
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")
+
+    @Size(min = 1, max = 120, message = "no cumple con la longitud")
     private String sourcecode_url;
     
 

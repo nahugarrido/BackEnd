@@ -1,5 +1,6 @@
 package com.portfolio.nahuelgarrido.Service;
 
+import com.portfolio.nahuelgarrido.Entity.Contacto;
 import com.portfolio.nahuelgarrido.Entity.Persona;
 import com.portfolio.nahuelgarrido.Interface.IPersonaService;
 import com.portfolio.nahuelgarrido.Repository.IPersonaRepository;
