@@ -19,18 +19,18 @@ public class Persona {
     private Long id;
 
 
-    @Size(min = 1, max = 80, message = "no cumple con la longitud")
+    @Size(min = 0, max = 80, message = "no cumple con la longitud")
     private String nombre;
     
 
-    @Size(min = 1, max = 80, message = "no cumple con la longitud")
+    @Size(min = 0, max = 80, message = "no cumple con la longitud")
     private String apellido;
     
 
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")
+    @Size(min = 0, max = 100, message = "no cumple con la longitud")
     private String puesto;
     
-    @Size(min = 1, max = 800, message = "no cumple con la longitud")
+    @Size(min = 0, max = 800, message = "no cumple con la longitud")
     private String descripcion;
 
     // Las imagenes no deben tener size o limitaria el tamaño de las imagenes que pueden ser aceptadas

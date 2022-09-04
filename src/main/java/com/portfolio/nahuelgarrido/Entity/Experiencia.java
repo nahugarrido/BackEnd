@@ -17,21 +17,21 @@ public class Experiencia {
     private int id;
     
 
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")
+    @Size(min = 0, max = 100, message = "no cumple con la longitud")
     private String empresa;
     
 
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")
+    @Size(min = 0, max = 100, message = "no cumple con la longitud")
     private String puesto;
     
 
-    @Size(min = 1, max = 600, message = "no cumple con la longitud")
+    @Size(min = 0, max = 600, message = "no cumple con la longitud")
     private String descripcion;
     
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")    
+    @Size(min = 0, max = 100, message = "no cumple con la longitud")    
     private String fecha_inicio;
     
-    @Size(min = 1, max = 100, message = "no cumple con la longitud")    
+    @Size(min = 0, max = 100, message = "no cumple con la longitud")    
     private String fecha_finalizacion;
     
     private String img;
