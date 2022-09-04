@@ -76,7 +76,7 @@ Tablas con todas las peticiones que se pueden realizar
  
 ## Habilidades
  
-| **Metodos** | **Rutas**                | **Acciones**                                        |
+| **Métodos** | **Rutas**                | **Acciones**                                        |
 |:-----------:|--------------------------|-----------------------------------------------------|
 | GET         | /habilidades/traer       | Retornar una lista con todas las habilidades.       |
 | GET         | /habilidades/traer/{id}  | Retornar una habilidad específica.                  |
@@ -96,7 +96,7 @@ Tablas con todas las peticiones que se pueden realizar
  
 ## Proyecto
  
-| **Metodos** | **Rutas**              | **Acciones**                                       |
+| **Métodos** | **Rutas**              | **Acciones**                                       |
 |:-----------:|------------------------|----------------------------------------------------|
 | GET         | /proyectos/traer       | Retornar una lista con todos los proyectos.        |
 | GET         | /proyectos/traer/{id}  | Retornar un proyecto específico.                   |
@@ -106,7 +106,7 @@ Tablas con todas las peticiones que se pueden realizar
 
 ## Security
  
-| **Metodos** | **Rutas**              | **Acciones**                                       |
+| **Métodos** | **Rutas**              | **Acciones**                                       |
 |:-----------:|------------------------|----------------------------------------------------|
 | POST        | /nuevo                 | Crear un nuevo usuario.                            |
 | POST        | /login                 | Ingresar con un usuario valido.                    |
