@@ -16,11 +16,11 @@ public class Habilidad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @NotNull
+
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String habilidad;
     
-    @NotNull
+
     @Size(min = 1, max = 50, message = "no cumple con la longitud")
     private String nivel;
 }

@@ -16,15 +16,15 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @NotNull
+
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String empresa;
     
-    @NotNull
+
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String puesto;
     
-    @NotNull
+
     @Size(min = 1, max = 600, message = "no cumple con la longitud")
     private String descripcion;
     

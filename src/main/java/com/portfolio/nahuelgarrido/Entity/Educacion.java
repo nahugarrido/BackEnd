@@ -16,15 +16,15 @@ public class Educacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     
-    @NotNull
+
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String titulo;
     
-    @NotNull
+
     @Size(min = 1, max = 100, message = "no cumple con la longitud")
     private String institucion;
     
-    @NotNull
+
     @Size(min = 1, max = 600, message = "no cumple con la longitud")
     private String descripcion;
     
