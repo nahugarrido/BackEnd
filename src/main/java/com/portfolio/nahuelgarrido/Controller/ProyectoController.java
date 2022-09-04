@@ -27,7 +27,7 @@ public class ProyectoController {
     }
     
     
-    @GetMapping("proyectos/traer/{id}")
+    @GetMapping("/proyectos/traer/{id}")
     public Proyecto getProyectoId(@PathVariable("id") int id) {
         return iproyectoService.findProyecto(id);
     }

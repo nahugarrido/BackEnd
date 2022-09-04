@@ -27,7 +27,7 @@ public class PersonaController {
     }
     
     
-    @GetMapping("personas/traer/{id}")
+    @GetMapping("/personas/traer/{id}")
     public Persona getPersonaId(@PathVariable("id") long id) {
         return ipersonaService.findPersona(id);
     }

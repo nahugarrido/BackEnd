@@ -27,7 +27,7 @@ public class HabilidadController {
     }
     
     
-    @GetMapping("habilidades/traer/{id}")
+    @GetMapping("/habilidades/traer/{id}")
     public Habilidad getHabilidadId(@PathVariable("id") int id) {
         return ihabilidadService.findHabilidad(id);
     }

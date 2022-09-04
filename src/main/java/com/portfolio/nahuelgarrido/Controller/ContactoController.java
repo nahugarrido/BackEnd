@@ -27,7 +27,7 @@ public class ContactoController {
     }
     
     
-    @GetMapping("contactos/traer/{id}")
+    @GetMapping("/contactos/traer/{id}")
     public Contacto getContactoId(@PathVariable("id") int id) {
         return icontactoService.findContacto(id);
     }

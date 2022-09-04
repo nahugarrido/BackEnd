@@ -27,7 +27,7 @@ public class ExperienciaController {
     }
     
     
-    @GetMapping("experiencias/traer/{id}")
+    @GetMapping("/experiencias/traer/{id}")
     public Experiencia getExperienciaId(@PathVariable("id") int id) {
         return iexperienciaService.findExperiencia(id);
     }

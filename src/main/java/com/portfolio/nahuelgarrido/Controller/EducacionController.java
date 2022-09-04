@@ -26,7 +26,7 @@ public class EducacionController {
         return ieducacionService.getEducacion();
     }
     
-    @GetMapping("educaciones/traer/{id}")
+    @GetMapping("/educaciones/traer/{id}")
     public Educacion getEducacionId(@PathVariable("id") int id) {
         return ieducacionService.findEducacion(id);
     }
